@@ -38,6 +38,7 @@ document.write("<div><ol><li>" + arrFruits.join("</li><li>") + "</li></ol></div>
 
 // Задание 3
 var strWords = "", chrSep = ";", strWord;
+var arrWords;
 
 while (true){
     strWord = prompt("Введите ключевое слово:", "");
@@ -59,5 +60,6 @@ while (true){
 if (strWords != ""){
     document.write("<h2>Задание 2. Список слов</h2>");    
     arrWords = strWords.split(chrSep);
+    arrWords.sort();
     document.write("<div><ol><li>" + arrWords.join("</li><li>") + "</li></ol></div>");    
 };
