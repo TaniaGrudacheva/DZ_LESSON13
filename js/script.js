@@ -1,6 +1,7 @@
+// Задание 1
 var arrCities = ["Нью-Йорк", "Лондон", "Одесса", "Кишинев"];
 var html = "<div><ul><li>" + arrCities.join("</li><li>") + "</li></ul></div>";
-var objDiv = null, objUl = null, objLi = null;
+var objDiv, objUl, objLi = null, objTextNode;
 
 document.write("<h2>Задание 1. Список городов</h2>");
 document.write("<h3>1.1. Join</h3>");
@@ -23,7 +24,40 @@ objUl = document.createElement("ul");
 objDiv.appendChild(objUl);
 for (var i = 0, len = arrCities.length; i < len; i++) {
     objLi = document.createElement("li");
-    textNode = document.createTextNode(arrCities[i]);
-    objLi.appendChild(textNode);
+    objTextNode = document.createTextNode(arrCities[i]);
+    objLi.appendChild(objTextNode);
     objUl.appendChild(objLi);
 }
+
+// Задание 2
+var strFruits = "Яблоко;Апельсин;Мандарин;Груша;Слива";
+var arrFruits = strFruits.split(";");
+
+document.write("<h2>Задание 2. Список фруктов</h2>");
+document.write("<div><ol><li>" + arrFruits.join("</li><li>") + "</li></ol></div>");
+
+// Задание 3
+var strWords = "", chrSep = ";", strWord;
+
+while (true){
+    strWord = prompt("Введите ключевое слово:", "");
+    if (typeof(strWord) == "object"){
+        break;
+    };
+
+    if (strWord == ""){
+        alert("Ввод пустой строки не допускается!");
+        continue;
+    };
+    
+    if (strWords != ""){
+        strWords = strWords + chrSep;
+    };
+    strWords = strWords + strWord;
+};
+
+if (strWords != ""){
+    document.write("<h2>Задание 2. Список слов</h2>");    
+    arrWords = strWords.split(chrSep);
+    document.write("<div><ol><li>" + arrWords.join("</li><li>") + "</li></ol></div>");    
+};
